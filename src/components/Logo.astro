@@ -1,0 +1,11 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<a href="/" class={`flex items-center gap-1.5 font-semibold text-xl ${className}`}>
+  <img src="/logo.svg" alt="Jettis" class="h-6 w-auto" />
+  <span class="text-gradient-brand text-sm leading-none">Pay</span>
+</a>

@@ -1,0 +1,57 @@
+---
+import Icon from "./Icon.astro";
+import type { IconName } from "../lib/icons";
+
+const steps: { icon: IconName; title: string; description: string }[] = [
+  {
+    icon: "user-plus",
+    title: "Crie sua conta",
+    description: "Preencha seus dados e envie a documentação.",
+  },
+  {
+    icon: "plug",
+    title: "Integre",
+    description: "Use nossas APIs ou plug-ins e conecte sua plataforma.",
+  },
+  {
+    icon: "credit-card",
+    title: "Comece a vender",
+    description: "Ofereça a melhor experiência de pagamento para seus clientes.",
+  },
+  {
+    icon: "bar-chart",
+    title: "Acompanhe tudo",
+    description: "Gestão completa das suas vendas em tempo real.",
+  },
+];
+---
+
+<section id="como-funciona" class="px-8 py-20">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-16 text-center">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-brand-blue">Como funciona</p>
+      <h2 class="text-3xl font-semibold sm:text-4xl">
+        É simples, rápido e <span class="text-gradient-brand">sem complicação</span>
+      </h2>
+    </div>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        steps.map((step, i) => (
+          <div class="relative text-center">
+            {i < steps.length - 1 && (
+              <div class="absolute top-8 left-1/2 hidden h-px w-full border-t border-dashed border-white/15 lg:block" />
+            )}
+            <div class="relative z-10 mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-bg-soft">
+              <Icon name={step.icon} class="size-6 text-white" />
+            </div>
+            <h3 class="mb-2 font-semibold">
+              {i + 1}. {step.title}
+            </h3>
+            <p class="mx-auto max-w-[220px] text-sm text-text-muted">{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

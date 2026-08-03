@@ -1,0 +1,23 @@
+---
+const stats = [
+  { value: "+99,5%", label: "Taxa de aprovação de pagamentos" },
+  { value: "+10M", label: "Transações processadas" },
+  { value: "+3.000", label: "Negócios atendidos" },
+  { value: "24/7", label: "Suporte especializado" },
+];
+---
+
+<section class="px-8 pb-20">
+  <div class="mx-auto max-w-7xl rounded-3xl bg-bg-soft px-8 py-10">
+    <div class="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+      {
+        stats.map((stat) => (
+          <div>
+            <p class="text-gradient-brand text-3xl font-semibold">{stat.value}</p>
+            <p class="mt-1 text-sm text-text-muted">{stat.label}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

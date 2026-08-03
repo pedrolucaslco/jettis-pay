@@ -1,0 +1,36 @@
+---
+import Button from "./Button.astro";
+import { waLink } from "../lib/whatsapp";
+---
+
+<section class="px-8 pb-24">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-brand px-8 py-12 text-center sm:flex-row sm:text-left">
+    <div>
+      <h2 class="text-2xl font-semibold sm:text-3xl">
+        Pronto para impulsionar seu negócio com a Jettis Pay?
+      </h2>
+      <p class="mt-2 text-white/80">
+        Fale com nosso time e descubra a melhor solução de pagamento para você.
+      </p>
+    </div>
+    <div class="flex shrink-0 flex-wrap justify-center gap-3">
+      <Button
+        href={waLink("Olá! Quero falar com um especialista da Jettis Pay.")}
+        target="_blank"
+        variant="white"
+        class="whitespace-nowrap"
+        icon="message-circle"
+      >
+        Falar com um especialista
+      </Button>
+      <Button
+        href={waLink("Olá! Quero minha conta na Jettis Pay.")}
+        target="_blank"
+        variant="outline"
+        class="whitespace-nowrap border-white/40"
+      >
+        Quero minha conta
+      </Button>
+    </div>
+  </div>
+</section>

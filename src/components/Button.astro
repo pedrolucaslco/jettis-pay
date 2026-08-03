@@ -1,0 +1,38 @@
+---
+import Icon from "./Icon.astro";
+import type { IconName } from "../lib/icons";
+
+interface Props {
+  href: string;
+  variant?: "solid" | "outline" | "white";
+  icon?: IconName;
+  class?: string;
+  target?: string;
+}
+
+const {
+  href,
+  variant = "solid",
+  icon,
+  class: className = "",
+  target,
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold transition-transform hover:scale-[1.03]";
+const variants = {
+  solid: "bg-gradient-brand text-white shadow-lg shadow-brand-purple/20",
+  outline: "border border-white/20 text-white hover:bg-white/5",
+  white: "bg-white text-bg hover:bg-white/90",
+};
+---
+
+<a
+  href={href}
+  target={target}
+  rel={target === "_blank" ? "noopener noreferrer" : undefined}
+  class={`${base} ${variants[variant]} ${className}`}
+>
+  <slot />
+  {icon && <Icon name={icon} class="size-4" />}
+</a>

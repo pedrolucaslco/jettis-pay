@@ -1,0 +1,62 @@
+---
+import Icon from "./Icon.astro";
+import type { IconName } from "../lib/icons";
+
+const advantages: { icon: IconName; title: string; description: string }[] = [
+  {
+    icon: "percent",
+    title: "Taxas competitivas",
+    description: "Condições justas que cabem no seu bolso.",
+  },
+  {
+    icon: "plug",
+    title: "Integração fácil",
+    description: "APIs e integrações prontas para as principais plataformas.",
+  },
+  {
+    icon: "headset",
+    title: "Suporte humanizado",
+    description: "Time especializado para te acompanhar sempre.",
+  },
+  {
+    icon: "layers",
+    title: "Escalável",
+    description: "Soluções para negócios de todos os tamanhos.",
+  },
+];
+---
+
+<section id="vantagens" class="bg-bg-soft px-8 py-20">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-3">
+    <div class="order-2 lg:order-1">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-brand-blue">Vantagens</p>
+      <h2 class="mb-4 text-3xl font-semibold sm:text-4xl">
+        Mais resultados para o <span class="text-gradient-brand">seu negócio</span>
+      </h2>
+      <p class="max-w-md text-text-muted">
+        Com a Jettis Pay, você tem mais controle, agilidade e segurança para focar no que
+        realmente importa.
+      </p>
+    </div>
+
+    <ul class="order-3 space-y-6 lg:order-2">
+      {
+        advantages.map((item) => (
+          <li class="flex items-start gap-4">
+            <div class="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/5">
+              <Icon name={item.icon} class="size-5 text-brand-blue" />
+            </div>
+            <div>
+              <p class="font-semibold">{item.title}</p>
+              <p class="text-sm text-text-muted">{item.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="order-1 flex justify-center lg:order-3">
+      <img src="/vantagens.png" alt="Logotipo 3D da Jettis Pay" class="w-full max-w-xs sm:max-w-sm" />
+    </div>
+  </div>
+</section>

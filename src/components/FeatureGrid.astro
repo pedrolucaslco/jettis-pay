@@ -1,0 +1,58 @@
+---
+import Icon from "./Icon.astro";
+import type { IconName } from "../lib/icons";
+
+const features: { icon: IconName; title: string; description: string }[] = [
+  {
+    icon: "credit-card",
+    title: "Diversos meios de pagamento",
+    description: "Aceite Pix, cartões de crédito, débito, boleto e carteiras digitais.",
+  },
+  {
+    icon: "shopping-cart",
+    title: "Checkout otimizado",
+    description: "Experiência rápida, responsiva e com alta taxa de aprovação.",
+  },
+  {
+    icon: "shield-check",
+    title: "Antifraude inteligente",
+    description: "Tecnologia avançada para proteger suas vendas e seus clientes.",
+  },
+  {
+    icon: "bar-chart",
+    title: "Relatórios em tempo real",
+    description: "Acompanhe suas vendas e recebimentos de onde estiver.",
+  },
+];
+---
+
+<section id="solucoes" class="px-8 py-20">
+  <div class="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+    <div>
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-brand-blue">Soluções</p>
+      <h2 class="mb-4 text-3xl font-semibold sm:text-4xl">
+        Tudo que seu negócio precisa em <span class="text-gradient-brand">um só lugar</span>
+      </h2>
+      <p class="max-w-md text-text-muted">
+        Ofereça a melhor experiência de pagamento para seus clientes com soluções completas,
+        modernas e integradas.
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        features.map((feature) => (
+          <div class="flex items-start gap-3 rounded-2xl bg-surface p-5">
+            <div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-blue/10">
+              <Icon name={feature.icon} class="size-5 text-brand-blue" />
+            </div>
+            <div>
+              <h3 class="mb-1 font-semibold">{feature.title}</h3>
+              <p class="text-sm text-text-muted">{feature.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

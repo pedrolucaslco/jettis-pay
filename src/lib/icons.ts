@@ -1,0 +1,17 @@
+export type IconName =
+  | "shield-check"
+  | "clock"
+  | "headset"
+  | "trending-up"
+  | "credit-card"
+  | "shopping-cart"
+  | "bar-chart"
+  | "percent"
+  | "plug"
+  | "user-plus"
+  | "layers"
+  | "arrow-right"
+  | "message-circle"
+  | "instagram"
+  | "facebook"
+  | "linkedin";

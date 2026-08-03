@@ -1,0 +1,33 @@
+---
+import Logo from "./Logo.astro";
+import Button from "./Button.astro";
+import { waLink } from "../lib/whatsapp";
+
+const links = [
+  { label: "Soluções", href: "/#solucoes" },
+  { label: "Vantagens", href: "/#vantagens" },
+  { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Integrações", href: "/#integracoes" },
+  { label: "Sobre nós", href: "/#sobre" },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-white/5 bg-bg/80 backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+    <Logo />
+    <ul class="hidden items-center gap-8 text-sm text-text-muted lg:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="transition-colors hover:text-white">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <Button href={waLink("Olá! Quero falar com um especialista da Jettis Pay.")} target="_blank" class="text-sm">
+      Falar com um especialista
+    </Button>
+  </nav>
+</header>

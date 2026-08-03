@@ -1,0 +1,25 @@
+---
+const badges = [
+  { name: "VISA", file: "visa.svg", class: "h-6 sm:h-7" },
+  { name: "Mastercard", file: "mastercard.svg", class: "h-6 sm:h-7" },
+  { name: "Elo", file: "elo.svg", class: "h-6 sm:h-7" },
+  { name: "American Express", file: "american-express.svg", class: "h-9 sm:h-[2.625rem]" },
+  { name: "Pix", file: "pix.svg", class: "h-6 sm:h-7" },
+  { name: "Boleto", file: "boleto.svg", class: "h-6 sm:h-7" },
+];
+---
+
+<section id="integracoes" class="bg-bg-soft px-8 py-16">
+  <div class="mx-auto max-w-7xl text-center">
+    <p class="mb-8 text-xs font-semibold tracking-wide text-text-muted">
+      Tecnologia que impulsiona negócios
+    </p>
+    <div class="grid grid-cols-3 items-center justify-items-center gap-x-6 gap-y-8 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-20 sm:gap-y-12">
+      {
+        badges.map((badge) => (
+          <img src={`/bandeiras/${badge.file}`} alt={badge.name} class={`w-auto ${badge.class}`} />
+        ))
+      }
+    </div>
+  </div>
+</section>
