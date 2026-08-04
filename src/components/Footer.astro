@@ -25,9 +25,9 @@ const columns = [
   {
     title: "Suporte",
     links: [
-      { label: "Central de ajuda", href: "#" },
+      { label: "Central de ajuda", href: "#", hidden: true },
       { label: "Fale conosco", href: waLink("Olá! Preciso falar com o suporte da Jettis Pay."), target: "_blank" },
-      { label: "Perguntas frequentes", href: "#" },
+      { label: "Perguntas frequentes", href: "#", hidden: true },
     ],
   },
 ];
@@ -47,7 +47,7 @@ const columns = [
             <p class="mb-4 font-semibold">{col.title}</p>
             <ul class="space-y-2 text-sm text-text-muted">
               {col.links.map((link) => (
-                <li>
+                <li class={link.hidden ? "hidden" : undefined}>
                   <a
                     href={link.href}
                     target={link.target}
@@ -66,7 +66,7 @@ const columns = [
 
     <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-sm text-text-muted sm:flex-row">
       <p>© 2026 Jettis Pay. Todos os direitos reservados.</p>
-      <div class="flex gap-4">
+      <div class="hidden gap-4">
         <a href="#" aria-label="Instagram" class="hover:text-white"><Icon name="instagram" class="size-5" /></a>
         <a href="#" aria-label="Facebook" class="hover:text-white"><Icon name="facebook" class="size-5" /></a>
         <a href="#" aria-label="LinkedIn" class="hover:text-white"><Icon name="linkedin" class="size-5" /></a>
